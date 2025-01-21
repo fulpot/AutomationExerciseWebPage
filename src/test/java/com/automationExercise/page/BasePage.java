@@ -29,6 +29,9 @@ public abstract class BasePage {
     @FindBy(xpath = "//a[@href='/logout']")
     public WebElement logoutButton;
 
+    @FindBy(css = "a[href='/contact_us']")
+    public WebElement contactUsButton;
+
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }

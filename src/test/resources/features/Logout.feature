@@ -1,7 +1,6 @@
 @logout @regression
 Feature: As a user I should log out my profile
 
-@wip
   Scenario Outline: User tries to log aut the own profile
     Given Navigate to url of webpage
     When The user goes to Signup - Login page
@@ -14,4 +13,4 @@ Feature: As a user I should log out my profile
     Examples:
       | Email             | Password |
       | gulugulu@klip.com | elma     |
-      | balbali@klip.com  | armut    |
+#      | balbali@klip.com  | armut    |

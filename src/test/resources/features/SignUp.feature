@@ -1,10 +1,12 @@
 @signup @regression
 Feature: As a user I should be able to sing up
 
-  @signup @smoke
-  Scenario Outline: Sign Up as a Tester
+  Background:
     Given Navigate to url of webpage
     When The user goes to Signup - Login page
+
+  @signup @smoke
+  Scenario Outline: Sign Up as a Tester
     And The user enters "<First Name>" as name
     And The user enters "<Email>" as email for signup
     And The user clicks "Signup" button to signup
@@ -31,3 +33,12 @@ Feature: As a user I should be able to sing up
       | Mr.   | Arnold     | Gerald    | gulugulu@klip.com | elma     | 1990-12-03    | Cat     | Cat CO. Cargus Street  | No 34    | United States | Alabama | Woka   | 32143   | +123432222    |
       | Mrs.  | Janny      | Bush      | balbali@klip.com  | armut    | 1998-05-10    | Dog     | Dog CO. Frieden Street | No 78    | United States | Texas   | Maicha | 94174   | +176395746    |
 
+Scenario Outline: Register User with existing email
+  And The user enters "<First Name>" as name
+  And The user enters "<Email>" as email for signup
+  And The user clicks "Signup" button to signup
+  Then Verify error message 'Email Address already exist!' is visible
+  Examples:
+    | First Name | Email             |
+    | Alex       | gulugulu@klip.com |
+#    | Ulla       | balbali@klip.com  |

@@ -135,4 +135,10 @@ public class SignUpStepDefinitions extends BasePage {
         Assert.assertEquals(expectedMessage, profileHomepagePage.loggedAsInName.getText().trim());
     }
 
+    @Then("Verify error message {string} is visible")
+    public void verify_error_message_is_visible(String errorMessage) {
+        Assert.assertTrue(loginSignupPage.existEmailErrorMessage.isDisplayed());
+        Assert.assertEquals(errorMessage, loginSignupPage.existEmailErrorMessage.getText());
+    }
+
 }

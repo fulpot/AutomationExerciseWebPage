@@ -36,5 +36,9 @@ public class LoginSignupPage extends BasePage {
     @FindBy(css = "#form h2")
     public List<WebElement> formHeaders;
 
+    @FindBy(css = "form[action='/signup'] > p")
+    public WebElement existEmailErrorMessage;
+
+
 
 }
