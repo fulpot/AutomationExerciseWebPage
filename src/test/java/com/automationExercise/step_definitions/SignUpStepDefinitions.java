@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-public class SignUpStepDefinitions extends BasePage {
+public class SignUpStepDefinitions {
     LoginSignupPage loginSignupPage = new LoginSignupPage();
     SignupPage signupPage = new SignupPage();
     AccountCreatedPage accountCreatedPage = new AccountCreatedPage();

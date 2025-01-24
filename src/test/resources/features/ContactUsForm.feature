@@ -3,7 +3,6 @@ Feature: As a User I should send to message to support team of the website
   Background:
     Given Navigate to url of webpage
 
-  @wip
   Scenario Outline: User sends a message with Contact Us module without logging in
     When Click on Contact Us button
     Then Verify 'GET IN TOUCH' is visible

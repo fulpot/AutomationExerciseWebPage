@@ -32,6 +32,9 @@ public abstract class BasePage {
     @FindBy(css = "a[href='/contact_us']")
     public WebElement contactUsButton;
 
+    @FindBy(css = "ul>li>a[href='/test_cases']")
+    public WebElement testCasesButton;
+
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
