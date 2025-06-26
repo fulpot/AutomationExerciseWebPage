@@ -1,6 +1,6 @@
 package com.automationExercise.utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -32,38 +32,38 @@ public class Driver {
             String browser = System.getProperty("browser") != null ? browser = System.getProperty("browser") : ConfigurationReader.get("browser");
             switch (browser) {
                 case "chrome":
-                    WebDriverManager.chromedriver().driverVersion("129.0.6668.0").setup();
+//                    WebDriverManager.chromedriver().driverVersion("129.0.6668.0").setup(); // <= I needed before, because I had updated my Chrome.
 //                    WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
                     break;
                 case "chrome-headless":
-                    WebDriverManager.chromedriver().setup();
+//                    WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver(new ChromeOptions().addArguments("--headless=new")));
                     break;
                 case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
+//                    WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     break;
                 case "firefox-headless":
-                    WebDriverManager.firefoxdriver().setup();
+//                    WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver(new FirefoxOptions().addArguments("--headless=new")));
                     break;
                 case "ie":
                     if (!System.getProperty("os.name").toLowerCase().contains("windows"))
                         throw new WebDriverException("Your OS doesn't support Internet Explorer");
-                    WebDriverManager.iedriver().setup();
+//                    WebDriverManager.iedriver().setup();
                     driverPool.set(new InternetExplorerDriver());
                     break;
                 case "edge":
                     if (!System.getProperty("os.name").toLowerCase().contains("windows"))
                         throw new WebDriverException("Your OS doesn't support Edge");
-                    WebDriverManager.edgedriver().setup();
+//                    WebDriverManager.edgedriver().setup();
                     driverPool.set(new EdgeDriver());
                     break;
                 case "safari":
                     if (!System.getProperty("os.name").toLowerCase().contains("mac"))
                         throw new WebDriverException("Your OS doesn't support Safari");
-                    WebDriverManager.getInstance(SafariDriver.class).setup();
+//                    WebDriverManager.getInstance(SafariDriver.class).setup();
                     driverPool.set(new SafariDriver());
                     break;
                 case "remote_chrome":
